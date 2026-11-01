@@ -13,21 +13,12 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-brand-green-dark">
       <Header />
-
       <HeroSection />
-
       <AboutSection />
-
       <CredentialsSection />
-
-      <QuoteParallaxSection />
-
       <ServicesSection />
-
       <FaqSection />
-
       <Footer />
-
       <FloatingWhatsApp />
     </main>
   );
