@@ -4,6 +4,7 @@ import {
   Cormorant_Garamond,
   Plus_Jakarta_Sans,
 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
@@ -32,7 +33,6 @@ const pageDescription =
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-
   applicationName: siteConfig.name,
 
   robots: {
@@ -68,11 +68,6 @@ export const metadata: Metadata = {
       "Direito Médico, Bioética e advocacia preventiva.",
     images: ["/og-image.png"],
   },
-
-  icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
-  },
 };
 
 export default function RootLayout({
@@ -87,6 +82,7 @@ export default function RootLayout({
     >
       <body className="bg-brand-green-dark text-brand-cream antialiased selection:bg-brand-gold selection:text-brand-green-dark">
         <SmoothScroll>{children}</SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
