@@ -11,6 +11,8 @@ import "./globals.css";
 import SmoothScroll from "@/components/animation/SmoothScroll";
 import { siteConfig } from "@/config/site";
 
+const siteUrl = "https://www.entreabulaealei.com.br";
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -31,9 +33,15 @@ const pageDescription =
   "Dra. Taís Rodrigues, OAB/MG 242.585. Atuação em Direito Médico, Bioética e advocacia preventiva para médicos, clínicas e profissionais da saúde.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: pageTitle,
   description: pageDescription,
   applicationName: siteConfig.name,
+
+  alternates: {
+    canonical: "/",
+  },
 
   robots: {
     index: true,
@@ -47,13 +55,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: siteUrl,
     siteName: siteConfig.name,
     title: pageTitle,
     description:
       "Entre a Bula e a Lei. Advocacia preventiva em Direito Médico e Bioética.",
     images: [
       {
-        url: "/og-image.png",
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Taís Rodrigues — Advocacia Estratégica em Direito Médico e Bioética",
@@ -66,7 +75,7 @@ export const metadata: Metadata = {
     title: pageTitle,
     description:
       "Direito Médico, Bioética e advocacia preventiva.",
-    images: ["/og-image.png"],
+    images: [`${siteUrl}/og-image.png`],
   },
 };
 
